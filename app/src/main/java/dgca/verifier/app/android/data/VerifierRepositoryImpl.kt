@@ -101,6 +101,16 @@ class VerifierRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun insertCubanCertificate(){
+        //Cuban Certificate
+//        val key = Key(kid = "MjZkN2M4NzQ=", key = keyStoreCryptor.encrypt("-----BEGIN PUBLIC KEY-----\n" +
+//                "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoXCdHnky1q1erbTObMg3ctIP7/K9\n" +
+//                "7vvP/OC5qdIFTwoZIUexsh81a7aBNyWCox22AkwTI0lfzTc9LqTGsM7vgA==\n" +
+//                "-----END PUBLIC KEY-----")!!)
+//        db.keyDao().insert(key)
+//        Timber.d("Cuban Certificate inserted")
+    }
+
     private fun isKidValid(responseKid: String?, responseStr: String): Boolean {
         if (responseKid == null) return false
 

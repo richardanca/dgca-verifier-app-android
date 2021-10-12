@@ -31,5 +31,7 @@ interface VerifierRepository {
 
     suspend fun getCertificatesBy(kid: String): List<Certificate>
 
+    suspend fun insertCubanCertificate()
+
     fun getLastSyncTimeMillis(): LiveData<Long>
 }
