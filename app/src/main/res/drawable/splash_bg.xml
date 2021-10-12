@@ -26,21 +26,21 @@
     <item android:drawable="@color/blue" />
 
     <item
-        android:width="150dp"
-        android:height="150dp"
-        android:drawable="@drawable/ic_baseline_qr_code_2_24"
+        android:width="224dp"
+        android:height="96dp"
+        android:drawable="@drawable/ic_marca_pais"
         android:gravity="center|top"
-        android:top="150dp" />
+        android:top="250dp" />
 
     <item
-        android:height="84dp"
+        android:height="120dp"
         android:drawable="@color/white"
         android:gravity="bottom" />
 
     <item
         android:width="60dp"
-        android:height="36dp"
+        android:height="65dp"
         android:bottom="32dp"
-        android:drawable="@drawable/eu_logo_big"
+        android:drawable="@drawable/minsap_logo"
         android:gravity="bottom|center" />
 </layer-list>

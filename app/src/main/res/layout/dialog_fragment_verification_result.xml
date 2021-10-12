@@ -312,7 +312,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:scaleType="centerInside"
-            android:src="@drawable/eu_logo_big" />
+            android:src="@drawable/minsap_logo" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
