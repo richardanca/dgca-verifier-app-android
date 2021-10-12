@@ -69,6 +69,8 @@ class CodeReaderFragment : BindingFragment<FragmentCodeReaderBinding>(),
     private lateinit var beepManager: BeepManager
     private lateinit var adapter: CountriesAdapter
 
+    var flashStatus = false
+
     private val callback: BarcodeCallback = object : BarcodeCallback {
         override fun barcodeResult(result: BarcodeResult) {
             if (result.text == null || result.text == lastText) {
@@ -107,6 +109,11 @@ class CodeReaderFragment : BindingFragment<FragmentCodeReaderBinding>(),
         binding.barcodeScanner.decoderFactory = DefaultDecoderFactory(formats)
         binding.barcodeScanner.decodeContinuous(callback)
         beepManager = BeepManager(requireActivity())
+
+        binding.flashButton.setOnClickListener {
+            flashStatus = !flashStatus
+            binding.barcodeScanner.setTorch(flashStatus)
+        }
 
         binding.settings.setOnClickListener {
             val action = CodeReaderFragmentDirections.actionCodeReaderFragmentToSettingsFragment()
@@ -205,6 +212,8 @@ class CodeReaderFragment : BindingFragment<FragmentCodeReaderBinding>(),
 
     override fun onPause() {
         super.onPause()
+        flashStatus = false
+        binding.barcodeScanner.setTorch(flashStatus)
         findNavController().removeOnDestinationChangedListener(this)
         binding.barcodeScanner.pause()
     }
